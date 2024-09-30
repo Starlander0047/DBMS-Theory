@@ -1,0 +1,21 @@
+-->It is Logical Representaion of data(in RDBMS it can be a single table or multiple tables)
+-->The term "schema" refers to the organization of data as a blueprint of how the database is constructed
+
+-->The relation between different tables is defined in conceptual schema it is mainly based on the ER model
+   (size of tables, name of tables etc)
+
+-->Where the data is actually stored, in which hard disk etc comes in physical schema
+
+.If we make a simple php or other websites(it is at the external schema level)
+.database designers work at conceptual level where they just design the conceptual model
+.at the physical level it is the DB administrator who decides where the data is be to kept(it can be centralized
+ or decentralized)
+
+-->The data is stored in form of files in DB but it is shown to the user as its schema suggests
+-->The DBA should be able to change the database storage structure without disturbing the user’s views
+
+
+-->Data independence is making the data independent of user or making data abstract(on diff levels)
+   Meaning, a change in lower level will not affect upper levels
+-->Data independence refers characteristic of being able to modify the schema at one level of the database
+   system without altering the schema at the next higher level.

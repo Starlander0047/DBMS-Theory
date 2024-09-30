@@ -1,0 +1,25 @@
+-->In a database management system (DBMS), a derived attribute is an attribute that is calculated from other attributes in the database, rather than being stored directly.
+-->For example, in an employee database, an employee's age is a derived attribute because it can be calculated from their date of birth. Since age is derived from the date of birth, it doesn't make sense to store it directly in the database.
+
+-->A relation is also a table with minimum two attributes. Other attributes are called as Descriptive Attributes.
+
+
+
+
+*Conversion of ER Model to the Relational Model:
+
+                                              ***********1 To 1 Relationship***********
+->Look at the 1 to 1 image in the folder
+->Three tables  be made
+->We can reduce it to two tables. We can merge the relation table with either of the two tables. Because we have taken the Primary Key a the E.ID,  we have merged the employee and the relation table, resulting in total 2 tables.
+->We can make either of the E.id or D.id as primary key in relation table.
+
+                                              ***********1 To M Relationship***********
+->Here only 1 Primary Key in the relation table. That key is same as the key of the table towards the many(M) side. In the image it is the Order Number.
+->The relation table can merge only with the order table.
+->Minimum number of tables = 2.
+
+                                              ***********M To N Relationship***********
+
+-->In M-N there is no reduction of tables. There will be 3 tables.
+-->Composite key will be formed between S.ID and C.ID

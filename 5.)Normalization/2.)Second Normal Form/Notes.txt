@@ -1,0 +1,13 @@
+-->Table should be in First Normal Form|
+-->There should be no partial dependency(or full functional dependent)|
+
+-->To convert to 2NF see img2. With candidate key we inserted all fully dependent non prime attributes in a table. And made another table in which the partial dependent attributes are there with its own candidate key.
+
+
+                                 _________________The problem with partial dependency_________________
+
+Suppose AB is the candidate key and situation is like given in the img1.
+Then B can alone decide C without A, this should not be the case. Both AB should deicide C. If AB is candidate key then either A or B can be null, but not both. So, in a situation like:         B will not be able to determine C.
+                                                  A  B
+                                                  1  -
+                                                  3  -

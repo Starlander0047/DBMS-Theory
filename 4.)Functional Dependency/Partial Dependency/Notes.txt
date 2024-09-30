@@ -1,0 +1,6 @@
+-->A part of the candidate Key should not determine any non prime attribute. But a candidate key as whole
+   can determine a non prime attribute.
+
+-->i.e. a proper subset of a candidate key should not determine a non prime attribute(in FD)
+
+-->For a relation to be in 2nd NF there should be fully functional dependency

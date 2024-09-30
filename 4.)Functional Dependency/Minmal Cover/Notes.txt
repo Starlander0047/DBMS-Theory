@@ -1,0 +1,17 @@
+-->Minimal Cover or Irreducible set of FDs.
+-->A minimal cover is a simplified and reduced version of the given set of functional dependencies. Since it is a reduced version, it is also called as Irreducible set.
+-->Step   i.)Decompose right side of all FDs to a single attribute.
+
+         ii.)Remove redundant FDs, choose one say A->B and see if leaving this FD, with the help of other
+             FDs are we able to get A->B, if yes then remove A->B.
+
+        iii.)Now, try to make the left side a single attribute. Say we have AC->B
+             remove C if the closure of A has C. Remove A if closure of C has A(transitive property).
+             Or, simply just find (AB)+ and after that find A+ and C+(without AC->B), if A+ and (AB)+ are same then Make it A->B. Or, make if C->B if C+ and
+             (AB)+ are equal. If they are not same then let AC->B.
+
+
+**-->canonical cover and minimal cover both are very close to each other basic difference is in canonical
+     cover you can have more than one attribute at right hand side but in minimal cover you can have 
+     only one, rest everything is same aim of both cover is to have remove redundant dependencies from
+     our database.

@@ -1,0 +1,11 @@
+-->PL-Procedural
+-->SQL is declerative. It just knows what to do and does not know how to do
+-->PL SQL is about both
+
+-->PLSQL => Functions  Procedures  Trigger  Cursor
+
+-->set serveroutput on  (sometimes need to write this at top when using in your pc)
+
+-->& for taking values does not work on live but it can work on your system
+
+-->In img1,   main and backup are tables

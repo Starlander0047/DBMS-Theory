@@ -1,0 +1,84 @@
+                                    *********ACID properties*********
+-->Atomicity(Either all or None)(if in a transaction any step fails then all the earlier steps need to 
+                                                                                              rollback)
+-->A failed transaction cant be resumed but it can be restarted
+
+-->Before the transaction starts and after the transaction ends the sum of money should be same(Consistency)
+   otherwise non consistent(bank will have to check the issue)
+
+-->Isolation: Isolation is the property that ensures that transactions are executed independently, without interfering with each other.
+              Isolation uses locks.
+              When we try to convert the parallel schedule to serial schedule. Because the serial schedule
+              is consistent(parallel schedule means that we are having multiple transactions going on and
+                            CPU executes each of them turn by turn part by part)
+
+-->Durability: the change once done is fixed and will never undo
+
+
+                                   *********Transaction States*********
+-->In active state of the transaction the data comes under the RAM
+-->Partially commit is when all the operations are executed but just commit operation is not executed
+-->After commit, all the changes are saved to the hard disk
+-->After termination the RAM is freed and resources are provided to another transaction
+
+
+                                      *********Schedule*********
+-->A schedule is the collection of transactions
+-->It is Chronological execution sequence of multiple transactions
+-->Serial(Ad--Consistent)(Dis--Waiting time for other transactions) and Parallel
+-->Serial transactions were earlier used(performance decreases with increase in number of transactions)
+-->So parallel schedule is now used, one CPU works with multiple transactions turn by turn
+-->So we will talk more about parallel schedule
+
+
+                       *********Read-Write Conflict in parallel Schedule*********
+-->Any number of user can read from a database at anytime. But problem comes with read-write and 
+   write-write operation(chance is rare but this can happen)
+-->Three issues with parallel schedule are given in folder.
+
+
+                                   *********Recoverability*********
+-->Cascading meaning is that due to occurring of one event multiple events are automatically occurring.
+-->For more see the folder of recoverability.
+
+
+                                   *********Serializability*********
+-->To know if a parallel schedule is consistent or not we check if it is serializable or not. If it is serializable then it is also consistent.
+-->See Img1
+-->Making a non serial Schedule Serial
+-->If we have n transactions then we have n! possibilities of serialization
+-->There will always be a loop in case of parallel schedule if we represent it graphically(T1-->T2, Serial)
+-->We have two methods to find if it is serializable,   Conflict and View
+
+
+                                 *********Conflict Serializable*********
+-->To check Conflict Equivalent(No change in adjacent conflict pairs, change in non-conflict pair)
+-->If any schedule has its equivalent conflict schedule existing, then it is serializable
+-->W-R, R-W, W-W (Conflict Pairs)
+-->If Conflict Equivalent of a schedule exists then it is Serializable.
+-->If we are not able to find the serial conflict equivalent schedule just by swapping, if number of
+   transactions increases then we use the below given method of precedence graph.
+
+-->To check if Conflict Serializable, draw precedence graph.
+-->If it is Conflict Serializable then its Serial Schedule must exist.
+-->If even a single loop exists in graph(not necessarily going through every node) then we cant say if it
+   is serializable(need to use View Serializability). Serializable if loop does not exist. 
+-->To determine the order in which the n transactions will happen. First start with that node whose
+   indegree is equal to 0. Then remove that node and continue doing the same.
+-->And if it is Serial, it is Consistent also.
+
+
+                                  *********View Serializable*********
+-->In computing, a blind write occurs when a transaction writes a value without reading it.
+-->If it is not conflict serializable and it has not got a blind write it is not a view serializable.
+   But if it has a blind write it is not sure if it is view serializable.
+-->Its possible if a schedule is not conflict and view serializable but still consistent(see img eg)
+-->If we are able to prove that the given schedule is view equivalent with any of the n! serial schedules
+   then we say that it is view serializable
+-->Steps :
+          i.)If there are data items(a,b,...) then check for each data item that the initial read is
+             performed by the same transaction in both schedules
+         ii.)If there are data items(a,b,...) then check for each data item that the final write is
+             performed by the same transaction in both schedules
+        iii.)If there are intermediate reads(not initial) then make sure that read is done from the
+             same transaction in both the schedules(for a particular data item)

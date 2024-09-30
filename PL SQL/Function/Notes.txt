@@ -1,0 +1,4 @@
+-->Function and Procedure are sub programs. Both can be stored in database as objects and can be reused.
+-->But unlike functions, procedures do not return any value
+
+-->drop function Function_Name;    (to delete a function)

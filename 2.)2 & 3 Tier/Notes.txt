@@ -1,0 +1,19 @@
+-->2-Tier architecture is also called as client server architecture(2 layers)
+-->Its disadvantages are: i.)If number of clients increases it creates a problem(less scalability)
+                         ii.)Clients are directly connecting to DB this creates a security issue
+-->Advantages are: Easy to maintain
+-->When we go to a bank or railway station to get the ticket availability checked by the authorized officers
+
+
+-->In three tier architecture we have client layer, business layer, and DB layer. Whenever a client asks for
+   data the respective query runs in the business layer and then after getting processed it goes to the
+   DB. This reduces load on DB. After this the DB sends data to business layer which again shows the desired
+   data to the client. But in case of two tier architecture the query is processed in the DB and this 
+   increases risk
+-->As a consequence Scalability and Security Increases
+-->Generally 3-Tier is used for load balancing.
+-->eg. All websites
+
+--> In a two-tier architecture, the client is on the first tier. The database server and web application server reside on the same server machine, which is the second tier.
+
+-->In both of the architectures client uses an interface to get the data and send request

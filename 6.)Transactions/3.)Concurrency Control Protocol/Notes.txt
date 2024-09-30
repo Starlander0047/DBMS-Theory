@@ -1,0 +1,55 @@
+                             *********Concurrency Control Protocols*********
+-->How to make the concurrent transactions serial and recoverable
+-->Shared Lock(S)-If transaction locked data item in shared mode then allowed to read only
+-->Exclusive Lock(X)-If transaction locked data item in exclusive mode then allowed to read and write
+                     both
+-->When a particular transaction will want to get a lock then the concurrency control unit will check the
+   compatibility table. (see img 2)
+-->Problems of S/X Locking :
+   i.)May not be sufficient to produce only serializable schedule(That is not certain that it will be
+                                                                                        serializable)
+  ii.)Does not give guarantee that the schedule is going to be recoverable
+ iii.)May not be free from dead lock. DeadLock is when two transactions wait for a resource for
+      infinite time.(see img 3)
+  iv.)May not be free from starvation. Starvation: Suppose T2 is having a S(A) then T1 requests X(A) that
+      it will not get and wait until S(A) of T2 gets over. Before S(A) of T2 gets over T3 asks for S(A)
+      that is gets and now S(A) of T2 gets over but still T1 is waiting for X(A). Similar thing happens 
+      that T4 asks for S(A) and gets it but T1 is still waiting for X(A). This way T1 is waiting but not
+      in an infinite manner. This is called Starvation
+
+-->2-PhaseLocking is the extension of shared/exclusive locking to reduce problems
+-->It consists of two phases   i.)Growing phase: Locks are acquired and no locks are released
+                              ii.)Shrinking phase: Locks are released and no locks are acquired
+-->If 2-PL is used then schedule is always serializable(then consistant also)
+-->That is 2-PL always ensures the serializability
+-->In the growing phase transaction reaches a point where all the locks it may need has been acquired.
+   This point is called LOCK POINT. After the lock point has been reached, the transaction enters a 
+   shrinking phase.
+-->If lock point of T1 comes before T2 then serial order is T1->T2
+-->Drawbacks of 2-PL:   i.)May not be free from irrecoverabiity
+                       ii.)May have deadlocks
+                      iii.)May have starvations
+                       iv.)Not free from cascading rollback
+-->Strict 2PL: It should satisfy the basic 2PL and all exclusive locks should hold until commit/abort
+   this ensures recoveribility, deadlock and starvation may still happen
+
+-->Rigorous 2PL: It should satisfy the basic 2PL and all exclusive/Shared locks should hold until commit/abort
+   this also ensures recoveribility, but deadlock and starvation will still be there
+
+-->Conservative 2PL: It is non practical model based on assumption and giving all the required locks on data
+   before the beginning of transaction. This eliminates starvation and deadlock
+-->Remember like src: strict rigorous conservative
+
+
+                                     *********Basic TimeStamp*********
+-->We assume that the transaction that came first will be completed first(T1->T2)
+-->You will observe that while updating RTS we use RTS(A)=MAX{RTS(A),TS(Ti)}   but in updating WTS we have
+   WTS(A)=TS(Ti). This is because there is no read read conflict and younger transaction can read before
+   older transaction.(You have understood this)
+-->Here we consider three conflicts, RW WR and WW only based on timestamp.
+-->Transaction that has been rolled back will be restarted in the future with new time stamp
+
+**-->Just memorise that if younger T has done read or write on some data then after that we cant do write 
+     or read on same data in older T(we can do read-read)
+     Also the WTS(A) or RTS(A) is always increasing or remaining constant(never decreases). You can easily
+     know why is there a MAX in case or RTS and no MAX in WTS.

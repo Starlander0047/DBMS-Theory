@@ -1,0 +1,5 @@
+-->If X covers Y(X>Y) and Y covers X(Y>X)  then both FDs are equivalent(> is not pointed for cover symbol)
+
+-->If there is C->D in both X(ABCDE) and Y(ABCDE) then dont check for closure, move to the next one
+
+-->Lecture 33 gate smashers DBMS

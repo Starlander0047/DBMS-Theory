@@ -1,0 +1,6 @@
+Implications of 1NF:
+
+- Each entry of the table has a unique value(or null)
+- No matter how the rows are written(order)
+- No matter how the columns are written(order)
+- Each column has got a certain type of data(eg. in name column there can only be names)

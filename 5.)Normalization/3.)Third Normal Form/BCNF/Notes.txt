@@ -1,0 +1,5 @@
+-->This is called as special case of 3NF
+-->This is more strict case than 3NF
+
+-->Table should be in 3NF
+-->LHS of the FD should be a super key

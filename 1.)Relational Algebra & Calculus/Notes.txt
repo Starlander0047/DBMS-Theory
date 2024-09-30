@@ -1,0 +1,34 @@
+           Both Relational Algebra and Relational Calculus are formal query languages.
+                                   *********Relational Algebra*******
+-->Procedural query language  or  Formal query language
+-->Called procedural as it gives the procedure to get the output also
+-->Before SQL relational algebra was used(1970)
+
+-->Projection will return only unique value in a column(see img1). Projection is used to retrieve the data
+   from the table
+-->Selection given in img2
+-->Projection always works on columns, selection always works on rows
+
+-->To join two tables we first need to perform cross product
+-->According to father of DBMS we perform join only if we have a(or more) same attribute in both tables. Otherwise
+   there is no need to perform the join
+
+-->We can also write like   πsid(student) x course     or     πsid(student) x πcid(course)   if course has
+   a single attribute
+-->If we do πname(S) it will only return unique values
+
+-->When 'for all' or 'for every' is given we take it as a hint for division operator
+   In our question on div operator we have to find the students who enrolled in every courses
+
+
+                                  *********Relational Calculus*******
+
+-->TRC and DRC comes under this
+-->This is non procedural query language
+-->TRC foucuses on rows while DRC foucuses on columns
+-->In procedural query language we tell what to do but we dont know how to do
+-->{t | P(t)}  t starts from tuple 1 and keeps checking if it satisfies P(t), then it comes in result.
+   P is predicate or rule
+-->Existential and universal quantifier(Remember about these)
+   The phrase "for every x'' (sometimes "for all x'') is called a universal quantifier and is denoted by ∀x. The phrase "there exists an x such that'' is called an existential quantifier and is denoted by ∃x.
+-->Free variable and Bound variable.

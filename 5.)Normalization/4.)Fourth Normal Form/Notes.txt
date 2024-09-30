@@ -1,0 +1,4 @@
+The main concept is that:
+If we have a A->->B and there are other attributes also, then the table will not be in 4th NF because so much of space is wasted just to embed multiple few values of an attribute for the same person(in multiple rows).
+That's why we split the table into multiple tables.
+And also we can not split the table if A->->B and A->->C given, and B and C are dependent. So here its the table is in 4th normal form.

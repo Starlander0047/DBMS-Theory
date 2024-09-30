@@ -1,0 +1,16 @@
+Irrecoverable Schedule:
+-->If a transaction does a dirty read operation from an uncommitted transaction and commits before the
+   transaction from where it has read the value, then such a schedule is called an irrecoverable schedule.
+
+Lost Update:
+-->A lost update problem occurs due to the update of the same record by two different transactions at the 
+   same time. In simple words, when two transactions are updating the same record at the same time in a
+   DBMS then a lost update problem occurs.
+
+Unrepeatable Read:
+-->The unrepeatable read problem occurs when two or more different values of the same data are read during
+   the read operations in the same transaction.
+
+Note: Dirty read occurs when a transaction reads data that has not yet been committed
+
+*************REMEMBER IT AS LUI

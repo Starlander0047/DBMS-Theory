@@ -1,0 +1,37 @@
+-->A Tuple in DBMS is just a row that contains inter-related data about a particular entity.
+   Tuple is also called record in DBMS. Tuples are mostly used in Relational Databases Management Systems
+
+
+                                     **CANDITATE KEY
+-->A key is simply an attribute which can uniquely identify a tuple
+-->Candidate keys are the group of keys which can uniquely identify a tuple. Or keys that can be a primary
+   key are known as candidate keys
+
+                                       **SUPER KEY
+-->If we combine any other attribute/attributes with one canditate key it becomes a Super Key.
+   Atleast one candidate key is neccessary to make it a Super Key. Just one candidate key is also known as
+   a Super Key
+
+-->Closure method is used to find all the candidate keys in the given table
+-->We can also know hidden dependency by finding closure of an element(that is not given directly in FD)
+-->R(ABCD) means table in which we have attributes A, B, C and D
+-->prime attribute is that which is used to make candidate key
+-->if ck={AE,BC}  then  prime attributes are A,B,C,E
+
+-->Use one more method to find Candidate Key. Other than to check the closure of each attribute, you can find
+   the essential element, which may be the candidate key and if not then it will definetly come in any other
+   candidate key. Take eg. R(ABCDEFGH);
+   essential attribute = C (suppose)
+   AC is candidate Key. Better than checking closure of AD,AE,AF,AG,etc you can check if A or C(from AC)
+   comes to the right of any functional dependency. suppose GH->A then make GC and HC (from AC) and check
+   their closure
+
+
+                                           *******************
+
+-->if A->B is given and you need to check if the given dependencies are valid or not
+   treat A as SID and B as Sname(My Trick)
+   if A is always unique then it will always be valid                  okay
+   if B is Same then also it will always be valid                      okay
+ 
+-->Infact the data is dependent on the dependency and not that the dependency is dependent on data

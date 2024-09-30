@@ -1,0 +1,18 @@
+-->Decomposition is of two major types in DBMS:
+            1.)Lossless
+            2.)Lossy
+
+-->Problems in decomposition maybe: 
+            1.)It can be Lossy
+            2.)It may not be able to preserve dependency
+
+-->For normalization we need to decompose the table(into more than one)
+-->It is necessary to keep at least one common attribute in two resultant tables
+-->On doing union of the attributes in the tables after decomposition the resultant attributes should
+   be same as in original table
+
+-->To have a Lossless decomposition we should always take the common attribute in the table as the CK or SK
+   of either T1 or T2 or both
+
+-->A relation R satisfies join dependency if R is equal to the join of R1,R2,.....Rn where Ri is a 
+   subset of the set of attributes of R.

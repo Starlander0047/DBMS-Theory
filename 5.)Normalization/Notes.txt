@@ -1,0 +1,6 @@
+-->Normalization is a technique to reduce or remove redundancy from a table
+-->We have two types of duplicacy in the table  i.)Row Level    ii.)Column Level
+-->Row level dublicacy can be removed by adding primary key
+-->You know a case of each Insertion Anomaly, Deletion Anomaly, and Updation Anomaly(These are the problems
+   when we have column redundancy)
+-->To remove these anomalies we have to part information to different tables.

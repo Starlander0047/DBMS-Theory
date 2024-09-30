@@ -1,0 +1,10 @@
+-->Although Second Normal Form (2NF)relations have less redundancy than those in 1NF, they may still suffer from update anomalies. If we update only one tuple and not the other, the database will be in an inconsistent state. This update anomaly is caused by a transitive dependency. We need to remove such dependencies by progressing to the Third Normal Form (3NF).
+
+-->If a non prime attribute determines a non prime attribute then this should not happen. As this will cause a prime attribute determine a non-Prime attribute transitively.
+
+-->It is clear that if a non prime attribute determines a non prime attribute B->C(e.g.) (also A is Key)
+    and also A(Key)->NonPrimeAttribute(always)
+    then A->B and also given that B->C so it becomes transitive A->C
+
+-->A prime attribute can determine a non prime attribute. Also, a non prime attribute can determine a
+   prime attribute
